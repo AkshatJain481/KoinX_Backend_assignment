@@ -14,7 +14,7 @@ router.get("/deviation", async (req, res) => {
       .sort({ timestamp: -1 })
       .limit(100);
     if (records.length < 2)
-      return res.status(400).json({ error: "Not enough data points" });
+      return res.status(400).json({ error: "Not enough records in database for the coin!" });
 
     const prices = records.map((record) => record.price);
     const mean = prices.reduce((sum, price) => sum + price, 0) / prices.length;
