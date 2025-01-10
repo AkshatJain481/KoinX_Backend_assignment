@@ -14,7 +14,6 @@ app.use(deviationRouter);
 
 mongoose
   .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {

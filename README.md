@@ -2,6 +2,10 @@
 
 This project is a backend service that fetches cryptocurrency data (Bitcoin, Matic, Ethereum) every 10 seconds, logs the execution time in seconds, and stores the latest cryptocurrency stats in a MongoDB database.
 
+## Deployed URL
+
+The application is deployed at: https://koinx-backend-assignment-le3j.onrender.com
+
 ### **What It Does**
 
 - **Fetches cryptocurrency data**: Every 2 hours, a background job that will fetch the current price in USD, market cap in USD and 24 hour change of 3 cryptocurrencies: Bitcoin, Matic, and Ethereum and store it in a database.
@@ -11,8 +15,7 @@ This project is a backend service that fetches cryptocurrency data (Bitcoin, Mat
 
 ### **Features**
 
-- Logs the execution time in seconds to the console.
-- Runs every 10 seconds to fetch and store the cryptocurrency stats.
+- Every 2 hours, a background job that will fetch the current price in USD, market cap in USD and 24 hour change of 3 cryptocurrencies: Bitcoin, Matic, and Ethereum and store it in a database.
 - Uses the CoinGecko API for retrieving cryptocurrency data.
 - MongoDB is used to store the data.
 
@@ -21,7 +24,7 @@ This project is a backend service that fetches cryptocurrency data (Bitcoin, Mat
 #### **1. Clone the Repository**
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/AkshatJain481/KoinX_Backend_assignment.git
 cd koinx-backend
 ```
 
@@ -50,6 +53,24 @@ npm run dev
 ```
 
 This will start the server and the job will run every 10 seconds to fetch the cryptocurrency data and log the execution time.
+
+### **Testing the API**
+
+You can test the deployed API endpoints using the following curl commands:
+
+1. Get stats for Bitcoin:
+
+```bash
+curl --location 'https://koinx-backend-assignment-le3j.onrender.com/stats?coin=bitcoin' \
+--header 'Content-Type: application/json'
+```
+
+2. Get price deviation for Bitcoin:
+
+```bash
+curl --location 'https://koinx-backend-assignment-le3j.onrender.com/deviation?coin=bitcoin' \
+--header 'Content-Type: application/json'
+```
 
 ### **Important Notes**
 
